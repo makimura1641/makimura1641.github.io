@@ -16,3 +16,6 @@
     visibility: visible;
   }
 }
+.card-body.color{
+  background-color: black;
+}
