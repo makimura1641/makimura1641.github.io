@@ -2,7 +2,7 @@
   background-color:brown;
   width:100%;
 }
-
+　
 .blink{
   animation: 1s linear infinite blink_effect;
 }
