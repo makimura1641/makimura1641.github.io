@@ -10,3 +10,7 @@ console.log(variableB);
 
 variableA=variableB;
 console.log(variableA);
+
+console.log(-123);
+
+console.log(123%3);
