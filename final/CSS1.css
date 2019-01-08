@@ -28,3 +28,61 @@
   z-index:100;
   width:320px;
 }
+
+
+.submenu {
+  list-style-type: none;
+  margin: 0 0 2em;
+  padding: 0;
+}
+
+.submenu li { display: inline; }
+
+.submenu li a {
+  padding: 5px 10px;
+  width: 220px;
+  display: block;
+  text-decoration: none;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.submenu li a:hover {
+  text-decoration: underline;
+  border: 2px inset #cccccc;
+  background-color: #c9c9c9;
+  color: #ff0000;
+}
+
+.submenu ul li a{
+  padding: 5px 10px;
+  width: 180px;
+  display: block;
+  text-decoration: none;
+  background-color: #000000;
+  color: #EEEEEE;
+}
+
+
+.sizuku {
+  animation: sizuku 1s linear 0s; /*1s はアニメーションにかかる時間*/
+  border-radius: 50%;
+  border: 4px solid #ff0000; /*ボーダーの幅と色*/
+  position: absolute;
+  z-index: 1000;
+}
+
+@keyframes sizuku {
+  0% {
+    height: 0;
+    opacity: 1;
+    transform: translate(0, 0);
+    width: 0;
+  }
+  100% {
+    height: 500px; /*円の高さ幅の最大値*/
+    opacity: 0;
+    transform: translate(-250px, -250px); /*高さの半分の値にする*/
+    width: 500px; /*基本高さと合わせる*/
+  }
+}
