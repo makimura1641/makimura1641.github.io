@@ -1,27 +1,52 @@
-//click イベントで発火
+
 document.body.addEventListener("click", drop, false);
 
 function drop(e) {
 
-  //座標の取得
   var x = e.pageX;
   var y = e.pageY;
 
-  //しずくになるdivの生成、座標の設定
   var sizuku = document.createElement("div");
   sizuku.style.top = y + "px";
   sizuku.style.left = x + "px";
   document.body.appendChild(sizuku);
 
-  //アニメーションをする className を付ける
   sizuku.className = "sizuku";
 
-  //アニメーションが終わった事を感知してしずくを remove する
   sizuku.addEventListener("animationend", function() {
     this.parentNode.removeChild(this);
   }, false);
 }
 
+
+function topButton(elmId, duration) {
+
+  //トップに戻るボタンの要素の取得
+  var topButton = document.getElementById(elmId);
+
+  topButton.addEventListener("click", function(e){
+
+    //デフォルトの動作の制御
+    e.preventDefault();
+
+    var begin = new Date() - 0;
+    var yOffset = window.pageYOffset;
+    var timer= setInterval(function() {
+      var current = new Date() - begin;
+      if (current > duration) {
+        clearInterval(timer);
+        current = duration;
+      }
+
+      //スクロール位置を単位時間で変更する
+      window.scrollTo(0, yOffset * (1 - current / duration))
+    }, 10);
+  }, false)
+
+}
+
+// 使用例 トップに戻るボタンの id とアニメーションにかかる時間をミリ秒で指定
+topButton("return-top", 300)
 
 
 var gYear = 2019,

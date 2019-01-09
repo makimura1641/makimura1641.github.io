@@ -80,9 +80,24 @@
     width: 0;
   }
   100% {
-    height: 500px; /*円の高さ幅の最大値*/
+    height: 500px;
     opacity: 0;
-    transform: translate(-250px, -250px); /*高さの半分の値にする*/
-    width: 500px; /*基本高さと合わせる*/
+    transform: translate(-250px, -250px);
+    width: 500px;
   }
+}
+
+#return-top {
+  background-color: #d66262;
+  border-radius: 50%;
+  bottom: 10px;
+  color: #fff;
+  font-size: 14px;
+  height: 50px;
+  line-height: 50px;
+  outline: 0;
+  position: fixed;
+  right: 10px;
+  text-align: center;
+  width: 60px;
 }
